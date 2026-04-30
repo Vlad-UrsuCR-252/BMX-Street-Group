@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<title>BMX Street Group - Evenimente</title>
+
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    font-family: Arial;
+    background: white;
+    color: black;
+    margin: 0;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'UnifrakturCook', cursive;
+    font-size: 72px;
+    margin: 20px 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+}
+
+button {
+    padding: 10px;
+    background: orange;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: darkorange;
+}
+</style>
+</head>
+
+<body>
+
+<h1>BMX Street Group</h1>
+<p>Elaborat de Vlad Ursu CR-252</p>
+
+<div class="grid" id="evenimente"></div>
+
+<script>
+const evenimente = [
+"Street Jam 2026",
+"BMX Contest Pro",
+"Urban Ride Meet",
+"Night Ride Event",
+"Freestyle Battle",
+"Park Session",
+"Flatland Show",
+"Dirt Jump Contest",
+"BMX Festival",
+"City Ride Day",
+"Extreme BMX Show",
+"Rider Meetup",
+"Trick Competition",
+"Beginner Session",
+"Pro Championship",
+"Summer BMX Tour",
+"Winter BMX Jam",
+"Street Style Contest",
+"Open BMX Cup",
+"BMX Demo Day"
+];
+
+const container = document.getElementById("evenimente");
+
+evenimente.forEach((nume, i) => {
+container.innerHTML += `
+<div class="card">
+<img src="https://source.unsplash.com/300x200/?bmx,event,${i}" alt="eveniment bmx">
+<h3>${nume}</h3>
+<p>Data: ${10 + i} iulie 2026</p>
+<button onclick="inscriere('${nume}')">Înscrie-te</button>
+</div>
+`;
+});
+
+function inscriere(nume) {
+alert("Te-ai înscris la: " + nume);
+}
+</script>
+
+</body>
+</html>
